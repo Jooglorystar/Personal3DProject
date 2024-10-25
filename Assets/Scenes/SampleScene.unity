@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1444389178}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ Transform:
   m_GameObject: {fileID: 1444389177}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: -0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 1505130209}
   - component: {fileID: 1505130210}
   - component: {fileID: 1505130211}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d1f9b513e277542ad05d39104735e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 100
   curMovementInput: {x: 0, y: 0}
   mouseDelta: {x: 0, y: 0}
 --- !u!114 &1505130211
@@ -581,14 +580,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 100
   groundLayer:
     serializedVersion: 2
-    m_Bits: 87
+    m_Bits: 119
   cameraContainer: {fileID: 1444389178}
   MinXLook: -85
   MaxXLook: 85
   lookSensitivity: 0.1
+  jumpForce: 100
+  maxJumpTime: 2
 --- !u!1 &2074365693
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 6513297541142065649}
   m_Layer: 6
   m_Name: SM_Bld_Concrete_Floor_03
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

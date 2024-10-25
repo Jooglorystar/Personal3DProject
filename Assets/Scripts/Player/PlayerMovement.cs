@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Runtime.CompilerServices;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement: MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
-    [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask groundLayer;
 
     [Header("Look")]
@@ -14,6 +14,11 @@ public class PlayerMovement: MonoBehaviour
     [SerializeField] private float MaxXLook;
     private float camCurXrot;
     [SerializeField] private float lookSensitivity;
+
+    [Header("Jump")]
+    [SerializeField] private float jumpForce;
+    [SerializeField] private int maxJumpTime;
+    private int jumpTime;
 
     private Rigidbody _rigidbody;
     private PlayerController _playerController;
@@ -60,30 +65,19 @@ public class PlayerMovement: MonoBehaviour
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && IsGrounded())
+        if (context.phase == InputActionPhase.Started && jumpTime != 0)
         {
-            _rigidbody.AddForce(Vector2.up*jumpForce,ForceMode.Impulse);
+            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
+            jumpTime--;
         }
     }
 
-    private bool IsGrounded()
+    private void OnCollisionEnter(Collision collision)
     {
-        Ray[] rays = new Ray[4]
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            new Ray(transform.position + (transform.forward * 0.3f) + (transform.up * 0.01f), Vector3.down),
-            new Ray(transform.position + (-transform.forward * 0.3f) + (transform.up * 0.01f), Vector3.down),
-            new Ray(transform.position + (transform.right * 0.3f) + (transform.up * 0.01f), Vector3.down),
-            new Ray(transform.position + (-transform.right * 0.3f) +(transform.up * 0.01f), Vector3.down)
-        };
-
-        for (int i = 0; i < rays.Length; i++)
-        {
-            if (Physics.Raycast(rays[i], 0.1f, groundLayer))
-            {
-                return true;
-            }
+            jumpTime = maxJumpTime;
         }
-
-        return false;
     }
 }

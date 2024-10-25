@@ -5,8 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float jumpForce;
-
     public Vector2 curMovementInput;
 
     public Vector2 mouseDelta;
