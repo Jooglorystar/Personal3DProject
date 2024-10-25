@@ -15,6 +15,7 @@ public class FallDown : MonoBehaviour
         {
             transform.position = startPoint;
             transform.rotation = Quaternion.Euler(Vector3.zero);
+            PlayerManager.Instance.Player.condition.TakePhysicalDamage(30);
         }
     }
 }
