@@ -137,7 +137,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &387685022
 Transform:
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,7 +335,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -366,7 +366,7 @@ Transform:
   m_GameObject: {fileID: 1444389177}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -387,7 +387,8 @@ GameObject:
   - component: {fileID: 1505130208}
   - component: {fileID: 1505130209}
   - component: {fileID: 1505130210}
-  m_Layer: 0
+  - component: {fileID: 1505130211}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +404,7 @@ Transform:
   m_GameObject: {fileID: 1505130204}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -430,9 +431,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
-  m_Height: 1.8
+  m_Height: 1.7
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &1505130207
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -519,8 +520,8 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1505130210}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 1505130211}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: OnJumpInput
         m_Mode: 0
         m_Arguments:
@@ -562,15 +563,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d1f9b513e277542ad05d39104735e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 100
+  curMovementInput: {x: 0, y: 0}
+  mouseDelta: {x: 0, y: 0}
+--- !u!114 &1505130211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505130204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0fc65270610d0479822a542ff5cd96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 50
+  jumpForce: 100
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 87
   cameraContainer: {fileID: 1444389178}
-  MinXLook: 0
-  MaxXLook: 0
-  lookSensitivity: 0
+  MinXLook: -85
+  MaxXLook: 85
+  lookSensitivity: 0.1
 --- !u!1 &6499868509600150126
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,12 +599,12 @@ GameObject:
   - component: {fileID: 6505265905098777602}
   - component: {fileID: 6513297541142065648}
   - component: {fileID: 6546092645887137228}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Bld_Concrete_Floor_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6503071850933858252
 Transform:
@@ -599,8 +615,8 @@ Transform:
   m_GameObject: {fileID: 6499868509600150126}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: -0.5, z: -5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 25, y: -0.5, z: -25}
+  m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 387685022}
@@ -674,8 +690,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.000003, y: 0.5000001, z: 9.999999}
-  m_Center: {x: -5.0000024, y: 0.25000006, z: 4.9999986}
+  m_Size: {x: 10.000003, y: 0.5, z: 10}
+  m_Center: {x: -5, y: 0.25, z: 5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -5,37 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Movement")]
-    [SerializeField] private float moveSpeed;
-    private Vector2 curMovementInput;
     [SerializeField] private float jumpForce;
-    [SerializeField] private LayerMask groundLayer;
 
-    [Header("Look")]
-    [SerializeField] private Transform cameraContainer;
-    [SerializeField] private float MinXLook;
-    [SerializeField] private float MaxXLook;
-    private float camCurXrot;
-    [SerializeField] private float lookSensitivity;
+    public Vector2 curMovementInput;
 
-    private Vector2 moundDelta;
-
-    private Rigidbody _rigidbody;
-
-    private void Awake()
-    {
-        _rigidbody = GetComponent<Rigidbody>();
-    }
-
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    void Update()
-    {
-        
-    }
+    public Vector2 mouseDelta;
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
@@ -51,14 +25,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnLookInput(InputAction.CallbackContext context)
     {
-        moundDelta = context.ReadValue<Vector2>();
-    }
-
-    public void OnJumpInput(InputAction.CallbackContext context)
-    {
-        if(context.phase == InputActionPhase.Started)
-        {
-            _rigidbody.AddForce(Vector2.up*jumpForce,ForceMode.Impulse);
-        }
+        mouseDelta = context.ReadValue<Vector2>();
     }
 }
