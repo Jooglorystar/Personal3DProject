@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jump")]
     [SerializeField] private float jumpForce;
-    [SerializeField] private int maxJumpTime;
-    private int jumpTime;
+    [SerializeField] public int maxJumpTime;
+    public int jumpTime;
 
     private Rigidbody _rigidbody;
     private PlayerController _playerController;
