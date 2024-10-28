@@ -7,7 +7,7 @@ public interface IDamagable
 
 public class PlayerCondition : MonoBehaviour, IDamagable
 {
-    public UIConditions uiCondition;
+    public UICondition uiCondition;
 
     Condition health { get {  return uiCondition.health; } }
 
