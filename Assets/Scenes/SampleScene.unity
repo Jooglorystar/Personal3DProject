@@ -485,7 +485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[E] To Use'
+  m_text: '[InteractKey] Use'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1622,6 +1622,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 19ab46ec-92b3-429c-9fb6-a93c625d1f8f
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e557957b-b061-4b9d-8988-1b8940e73b66
+    m_ActionName: Player/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1712,6 +1716,7 @@ MonoBehaviour:
     m_Bits: 128
   interactItem: {fileID: 0}
   itemInfoText: {fileID: 356952182}
+  interactText: {fileID: 384182866}
 --- !u!1 &1864954730
 GameObject:
   m_ObjectHideFlags: 0

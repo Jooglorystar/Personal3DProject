@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 public interface IInteractable
@@ -18,7 +19,8 @@ public class Interaction : MonoBehaviour
     public GameObject interactItem;
     private IInteractable interactable;
 
-    public TextMeshProUGUI itemInfoText;
+    [SerializeField] private TextMeshProUGUI itemInfoText;
+    [SerializeField] private TextMeshProUGUI interactText;
     private Camera _camera;
 
     private void Awake()
@@ -42,6 +44,7 @@ public class Interaction : MonoBehaviour
                     interactItem = hit.collider.gameObject;
                     interactable = hit.collider.GetComponent<IInteractable>();
                     SetItemInfoText();
+                    SetInteractText();
                 }
 
             }
@@ -50,6 +53,7 @@ public class Interaction : MonoBehaviour
                 interactItem = null;
                 interactable = null;
                 itemInfoText.gameObject.SetActive(false);
+                interactText.gameObject.SetActive(false);
             }
         }
     }
@@ -58,5 +62,18 @@ public class Interaction : MonoBehaviour
     {
         itemInfoText.gameObject.SetActive(true);
         itemInfoText.text = interactable.GetItemData();
+    }
+
+    private void SetInteractText()
+    {
+        interactText.gameObject.SetActive(true);
+        interactText.text = GetInteractText();
+    }
+
+    public string GetInteractText()
+    {
+        string interactKeyBindings = PlayerManager.Instance.Player.GetComponent<PlayerInput>().actions.FindAction("Interact").bindings[0].ToDisplayString();
+        string interactText = $"[{interactKeyBindings}] Use";
+        return interactText;
     }
 }
