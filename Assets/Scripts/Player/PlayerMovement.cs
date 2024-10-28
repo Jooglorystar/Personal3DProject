@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && jumpTime != 0)
+        if (context.phase == InputActionPhase.Started && jumpTime > 0)
         {
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);

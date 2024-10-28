@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 
 public interface IInteractable
@@ -20,6 +21,7 @@ public class Interaction : MonoBehaviour
     private IInteractable interactable;
 
     [SerializeField] private TextMeshProUGUI itemInfoText;
+    [SerializeField] private Image itemInfoBg;
     [SerializeField] private TextMeshProUGUI interactText;
 
     private Camera _camera;
@@ -55,7 +57,7 @@ public class Interaction : MonoBehaviour
             {
                 interactItem = null;
                 interactable = null;
-                itemInfoText.gameObject.SetActive(false);
+                itemInfoBg.gameObject.SetActive(false);
                 interactText.gameObject.SetActive(false);
             }
         }
@@ -63,7 +65,7 @@ public class Interaction : MonoBehaviour
 
     private void SetItemInfoText()
     {
-        itemInfoText.gameObject.SetActive(true);
+        itemInfoBg.gameObject.SetActive(true);
         itemInfoText.text = interactable.GetItemData();
     }
 
