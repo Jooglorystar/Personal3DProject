@@ -21,11 +21,14 @@ public class Interaction : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI itemInfoText;
     [SerializeField] private TextMeshProUGUI interactText;
+
     private Camera _camera;
+    private PlayerInput playerInput;
 
     private void Awake()
     {
         _camera = Camera.main;
+        playerInput = GetComponent<PlayerInput>();
     }
 
     private void Update()
@@ -72,7 +75,7 @@ public class Interaction : MonoBehaviour
 
     public string GetInteractText()
     {
-        string interactKeyBindings = PlayerManager.Instance.Player.GetComponent<PlayerInput>().actions.FindAction("Interact").bindings[0].ToDisplayString();
+        string interactKeyBindings = playerInput.actions.FindAction("Interact").bindings[0].ToDisplayString();
         string interactText = $"[{interactKeyBindings}] Use";
         return interactText;
     }
