@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Medicine
   m_EditorClassIdentifier: 
   itemName: Medicine
+  itemDesc: Medicine to heal you.
   type: 0
   effectValue: 50

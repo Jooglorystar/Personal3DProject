@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Player: MonoBehaviour
 {
     public PlayerController controller;
     public PlayerCondition condition;
     public PlayerMovement movement;
+
+    public ItemSO itemData;
+    public Action useItem;
 
     private void Awake()
     {

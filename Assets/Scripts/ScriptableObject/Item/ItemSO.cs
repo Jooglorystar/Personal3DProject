@@ -13,6 +13,7 @@ public class ItemSO : ScriptableObject
 {
     [Header("Item")]
     public string itemName;
+    public string itemDesc;
     public ItemType type;
     public float effectValue;
 }
