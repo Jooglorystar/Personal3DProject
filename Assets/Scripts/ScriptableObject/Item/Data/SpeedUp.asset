@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Speed Up
   itemDesc: Make your speed double
   type: 2
-  effectValue: 5
+  effectValue: 2

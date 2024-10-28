@@ -81,4 +81,16 @@ public class Interaction : MonoBehaviour
         string interactText = $"[{interactKeyBindings}] Use";
         return interactText;
     }
+
+    public void OnInteractInput(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Started)
+        {
+            interactable.OnInteract();
+            interactItem = null;
+            interactable = null;
+            itemInfoBg.gameObject.SetActive(false);
+            interactText.gameObject.SetActive(false);
+        }
+    }
 }

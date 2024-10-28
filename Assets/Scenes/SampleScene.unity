@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 174859005}
   - component: {fileID: 174859006}
   - component: {fileID: 174859007}
+  - component: {fileID: 174859008}
   m_Layer: 7
   m_Name: SpeedUP
   m_TagString: Item
@@ -294,6 +295,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 2c6f7e1dc56073d46a1137120afd1dad, type: 2}
+--- !u!114 &174859008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174859003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51650c8d6d9e84a48b5d45247d3b921f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &356952180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,6 +1348,7 @@ GameObject:
   - component: {fileID: 1384644393}
   - component: {fileID: 1384644392}
   - component: {fileID: 1384644391}
+  - component: {fileID: 1384644394}
   m_Layer: 7
   m_Name: HealthUp
   m_TagString: Item
@@ -1419,6 +1433,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.12, y: 0.2, z: 0.11107857}
   m_Center: {x: 0.005, y: 0.1, z: 0.015}
+--- !u!114 &1384644394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384644389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51650c8d6d9e84a48b5d45247d3b921f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1444389177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,7 +1491,7 @@ GameObject:
   - component: {fileID: 1459021849}
   m_Layer: 0
   m_Name: Box (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1999,7 +2025,19 @@ MonoBehaviour:
     m_ActionId: 19ab46ec-92b3-429c-9fb6-a93c625d1f8f
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1505130214}
+        m_TargetAssemblyTypeName: Interaction, Assembly-CSharp
+        m_MethodName: OnInteractInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e557957b-b061-4b9d-8988-1b8940e73b66
     m_ActionName: Player/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
@@ -2019,7 +2057,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca832363e9d56dd4b9ba9521cf76e0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
   condition: {fileID: 0}
   movement: {fileID: 0}
   itemData: {fileID: 0}
@@ -2688,7 +2725,7 @@ GameObject:
   - component: {fileID: 64779887495362988}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

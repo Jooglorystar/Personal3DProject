@@ -15,4 +15,9 @@ public class PlayerCondition : MonoBehaviour, IDamagable
     {
         health.Subtract(damageAmount);
     }
+
+    public void Heal(float value)
+    {
+        health.Add(value);
+    }
 }

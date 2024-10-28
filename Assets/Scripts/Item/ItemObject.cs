@@ -6,6 +6,12 @@ using UnityEngine.InputSystem;
 public class ItemObject : MonoBehaviour, IInteractable
 {
     public ItemSO itemData;
+    private ItemEffect effect;
+
+    private void Awake()
+    {
+        effect = GetComponent<ItemEffect>();
+    }
 
     public string GetItemData()
     {
@@ -15,8 +21,7 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        PlayerManager.Instance.Player.itemData = itemData;
-        PlayerManager.Instance.Player.useItem?.Invoke();
-        Destroy(gameObject);
+        effect.Effect();
+        //Destroy(gameObject);
     }
 }

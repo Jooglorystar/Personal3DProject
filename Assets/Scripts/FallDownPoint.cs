@@ -20,6 +20,7 @@ public class FallDownPoint : MonoBehaviour
                 other.gameObject.transform.rotation = Quaternion.Euler(Vector3.zero);
                 PlayerManager.Instance.Player.condition.TakePhysicalDamage(50);
                 break;
+
             case "Item":
                 Destroy(other.gameObject);
                 break;

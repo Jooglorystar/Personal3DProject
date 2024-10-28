@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private float moveSpeed;
+    public float moveSpeed;
     [SerializeField] private LayerMask groundLayer;
 
     [Header("Look")]
