@@ -17,11 +17,10 @@ public class ItemEffect : MonoBehaviour
 
             case ItemType.SpeedUp:
                 StartCoroutine(SpeedEffectCoroutine(itemData.effectValue));
-                StopCoroutine(SpeedEffectCoroutine(itemData.effectValue));
                 break;
 
             case ItemType.JumpPlus:
-                PlayerManager.Instance.Player.movement.jumpTime += 1;
+                PlayerManager.Instance.Player.movement.maxJumpTime += 1;
                 break;
 
             default:
