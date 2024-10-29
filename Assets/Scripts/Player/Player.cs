@@ -5,6 +5,7 @@ public class Player: MonoBehaviour
 {
     public PlayerCondition condition;
     public PlayerMovement movement;
+    public JumpCount jumpCount;
 
     public ItemSO itemData;
     public ItemEffect itemEffect;

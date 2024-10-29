@@ -15,8 +15,10 @@ public class JumpPad : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            _rigidbody.velocity = Vector3.zero;
             _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
             PlayerManager.Instance.Player.movement.jumpTime -= PlayerManager.Instance.Player.movement.maxJumpTime;
+            PlayerManager.Instance.Player.jumpCount.UpdateJumpCount(PlayerManager.Instance.Player.movement.jumpTime);
         }
     }
 }

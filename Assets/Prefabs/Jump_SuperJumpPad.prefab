@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a702d86bde01dc74aa9e0ad8b17d31bd, type: 2}
+  - {fileID: 2100000, guid: 3ded42de76907514bba4178af1d6d937, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,4 +118,4 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: 0.000000059604645, y: -4, z: -0.00000008940697}
+  m_Center: {x: 0, y: -4, z: 0}

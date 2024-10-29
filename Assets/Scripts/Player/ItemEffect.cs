@@ -21,9 +21,12 @@ public class ItemEffect : MonoBehaviour
 
             case ItemType.JumpPlus:
                 PlayerManager.Instance.Player.movement.maxJumpTime += 1;
+                PlayerManager.Instance.Player.movement.jumpTime = PlayerManager.Instance.Player.movement.maxJumpTime;
+                PlayerManager.Instance.Player.jumpCount.UpdateJumpCount(PlayerManager.Instance.Player.movement.jumpTime);
                 break;
 
             default:
+                Debug.Log("ItemType이 정의 되지 않음");
                 break;
         }
     }

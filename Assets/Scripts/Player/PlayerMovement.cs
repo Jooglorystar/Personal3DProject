@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody _rigidbody;
     private PlayerController _playerController;
+    public JumpCount jumpCount;
 
     private void Awake()
     {
@@ -70,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
             jumpTime--;
+            PlayerManager.Instance.Player.jumpCount.UpdateJumpCount(PlayerManager.Instance.Player.movement.jumpTime);
         }
     }
 
@@ -78,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground") && jumpTime != maxJumpTime)
         {
             jumpTime = maxJumpTime;
+            PlayerManager.Instance.Player.jumpCount.UpdateJumpCount(PlayerManager.Instance.Player.movement.jumpTime);
         }
     }
 }
