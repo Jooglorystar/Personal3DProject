@@ -2035,6 +2035,7 @@ MonoBehaviour:
   condition: {fileID: 0}
   movement: {fileID: 0}
   itemData: {fileID: 0}
+  itemEffect: {fileID: 0}
 --- !u!114 &1505130210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2070,7 +2071,7 @@ MonoBehaviour:
   MaxXLook: 85
   lookSensitivity: 0.1
   jumpForce: 100
-  maxJumpTime: 2
+  maxJumpTime: 1
   jumpTime: 2
 --- !u!114 &1505130213
 MonoBehaviour:
