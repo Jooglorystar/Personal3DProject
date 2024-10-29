@@ -31,6 +31,6 @@ public class PlayerCondition : MonoBehaviour, IDamagable
 
     private void Die()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MainScene");
     }
 }

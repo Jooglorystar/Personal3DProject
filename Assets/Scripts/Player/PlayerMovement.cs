@@ -1,12 +1,10 @@
-﻿using System.Runtime.CompilerServices;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
-    [SerializeField] private LayerMask groundLayer;
 
     [Header("Look")]
     [SerializeField] private Transform cameraContainer;
