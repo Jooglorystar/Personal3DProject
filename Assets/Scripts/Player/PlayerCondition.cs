@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public interface IDamagable
 {
@@ -11,6 +12,13 @@ public class PlayerCondition : MonoBehaviour, IDamagable
 
     Condition health { get {  return uiCondition.health; } }
 
+    private void Update()
+    {
+        if (health.curValue <= 0)
+        {
+            Die();
+        }
+    }
     public void TakePhysicalDamage(int damageAmount)
     {
         health.Subtract(damageAmount);
@@ -19,5 +27,10 @@ public class PlayerCondition : MonoBehaviour, IDamagable
     public void Heal(float value)
     {
         health.Add(value);
+    }
+
+    private void Die()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

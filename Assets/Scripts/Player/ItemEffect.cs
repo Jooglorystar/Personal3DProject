@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,7 @@ public class ItemEffect : MonoBehaviour
                 break;
 
             case ItemType.JumpPlus:
-                PlayerManager.Instance.Player.movement.maxJumpTime += 1;
+                PlayerManager.Instance.Player.movement.maxJumpTime = Mathf.Min(PlayerManager.Instance.Player.movement.maxJumpTime += 1, 6);
                 PlayerManager.Instance.Player.movement.jumpTime = PlayerManager.Instance.Player.movement.maxJumpTime;
                 PlayerManager.Instance.Player.jumpCount.UpdateJumpCount(PlayerManager.Instance.Player.movement.jumpTime);
                 break;
