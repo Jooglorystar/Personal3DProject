@@ -6,13 +6,9 @@ public class ItemEffect : MonoBehaviour
 {
     private ItemSO itemData;
 
-    private void Awake()
-    {
-        itemData = GetComponent<ItemObject>().itemData;
-    }
-
     public void Effect()
     {
+        itemData = PlayerManager.Instance.Player.itemData;
         switch (itemData.type)
         {
             case ItemType.Heal:
@@ -25,6 +21,7 @@ public class ItemEffect : MonoBehaviour
                 break;
 
             case ItemType.JumpPlus:
+                PlayerManager.Instance.Player.movement.jumpTime += 1;
                 break;
 
             default:

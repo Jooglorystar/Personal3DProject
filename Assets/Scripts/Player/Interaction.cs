@@ -48,6 +48,7 @@ public class Interaction : MonoBehaviour
                 {
                     interactItem = hit.collider.gameObject;
                     interactable = hit.collider.GetComponent<IInteractable>();
+                    PlayerManager.Instance.Player.itemData = interactItem.GetComponent<ItemObject>().itemData;
                     SetItemInfoText();
                     SetInteractText();
                 }
