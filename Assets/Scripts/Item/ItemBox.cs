@@ -19,7 +19,7 @@ public class ItemBox : MonoBehaviour
         itemNameText.text = itemData.itemName;
         if (itemRegener.spawnCount >= 0)
         {
-            itemCountText.text = (itemRegener.spawnCount + 1).ToString();
+            itemCountText.text = (itemRegener.spawnCount).ToString();
         }
         else
         {
