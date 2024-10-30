@@ -72,13 +72,4 @@ public class PlayerMovement : MonoBehaviour
             PlayerManager.Instance.Player.jumpCount.UpdateJumpCount(PlayerManager.Instance.Player.movement.jumpTime);
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground") && jumpTime != maxJumpTime)
-        {
-            jumpTime = maxJumpTime;
-            PlayerManager.Instance.Player.jumpCount.UpdateJumpCount(PlayerManager.Instance.Player.movement.jumpTime);
-        }
-    }
 }

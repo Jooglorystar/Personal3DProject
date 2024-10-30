@@ -3,12 +3,18 @@ using UnityEngine;
 
 public class ItemRegener : MonoBehaviour
 {
-    [SerializeField] private GameObject prefab;
+    public GameObject prefab;
     private GameObject spawnedItem;
-    [SerializeField] private int spawnCount;
+    public int spawnCount;
     private float spawnTime = 5f;
 
     private Coroutine coroutine;
+
+    private void Start()
+    {
+        spawnedItem = Instantiate(prefab, transform);
+        spawnCount--;
+    }
 
     private void Update()
     {
@@ -27,7 +33,7 @@ public class ItemRegener : MonoBehaviour
             coroutine = null;
             spawnCount--;
         }
-        else if (spawnCount == -1)
+        else if (spawnCount <= -1)
         {
             yield return new WaitForSeconds(spawnTime);
             spawnedItem = Instantiate(prefab, transform);
