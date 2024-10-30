@@ -5,7 +5,7 @@ public class ItemRegener : MonoBehaviour
 {
     public GameObject prefab;
     private GameObject spawnedItem;
-    [SerializeField] private int spawnCount;
+    public int spawnCount;
     private float spawnTime = 5f;
 
     private Coroutine coroutine;
