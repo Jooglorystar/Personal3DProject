@@ -10,6 +10,12 @@ public class ItemRegener : MonoBehaviour
 
     private Coroutine coroutine;
 
+    private void Start()
+    {
+        spawnedItem = Instantiate(prefab, transform);
+        spawnCount--;
+    }
+
     private void Update()
     {
         if (spawnedItem == null && coroutine == null)
