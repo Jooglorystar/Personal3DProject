@@ -33,7 +33,7 @@ public class ItemRegener : MonoBehaviour
             coroutine = null;
             spawnCount--;
         }
-        else if (spawnCount == -1)
+        else if (spawnCount <= -1)
         {
             yield return new WaitForSeconds(spawnTime);
             spawnedItem = Instantiate(prefab, transform);
