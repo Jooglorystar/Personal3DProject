@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922851b5a83d3f3448d6b9c9ce6d74f4, type: 3}
   m_Name: JumpTimeUp
   m_EditorClassIdentifier: 
-  itemName: JumpTimeUp
+  itemName: Jump Plus
   itemDesc: Increase Your Jump Time
   type: 1
   effectValue: 1

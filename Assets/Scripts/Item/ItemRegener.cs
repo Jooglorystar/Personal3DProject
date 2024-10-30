@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemRegener : MonoBehaviour
 {
-    [SerializeField] private GameObject prefab;
+    public GameObject prefab;
     private GameObject spawnedItem;
     [SerializeField] private int spawnCount;
     private float spawnTime = 5f;

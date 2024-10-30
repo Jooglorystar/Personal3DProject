@@ -3590,7 +3590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jump Plus
+  m_text: BoxText
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3687,7 +3687,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Speed up
+  m_text: BoxText
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3789,6 +3789,7 @@ GameObject:
   - component: {fileID: 7456509201627314605}
   - component: {fileID: 5172874052766298312}
   - component: {fileID: 2918117887836261455}
+  - component: {fileID: 7456509201627314606}
   m_Layer: 0
   m_Name: Health up Box
   m_TagString: Ground
@@ -3968,6 +3969,7 @@ GameObject:
   - component: {fileID: 652172327182336774}
   - component: {fileID: 3008282854722243171}
   - component: {fileID: 5046582554595423972}
+  - component: {fileID: 6187804794021940238}
   m_Layer: 0
   m_Name: Speed up Box
   m_TagString: Ground
@@ -3975,6 +3977,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6187804794021940238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6187804794021940237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d9ea5403624974ea654b120fccb6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNameText: {fileID: 4074486341249792070}
 --- !u!224 &6224985445084176063
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4032,7 +4047,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Health Up
+  m_text: BoxText
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4259,6 +4274,7 @@ GameObject:
   - component: {fileID: 512001256391867618}
   - component: {fileID: 2857978690222912903}
   - component: {fileID: 5196895794494867712}
+  - component: {fileID: 6613952236649346026}
   m_Layer: 0
   m_Name: Box (3)
   m_TagString: Ground
@@ -4266,6 +4282,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6613952236649346026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613952236649346025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d9ea5403624974ea654b120fccb6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNameText: {fileID: 3935440831055300514}
 --- !u!4 &7096041020488006222
 Transform:
   m_ObjectHideFlags: 0
@@ -4305,6 +4334,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4299059088161339046}
   m_Mesh: {fileID: 4300000, guid: e8df022951e020e4696d8ebefd39e0f4, type: 3}
+--- !u!114 &7456509201627314606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299059088161339046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d9ea5403624974ea654b120fccb6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNameText: {fileID: 6268262356283392749}
 --- !u!114 &7858128515875089775
 MonoBehaviour:
   m_ObjectHideFlags: 0
