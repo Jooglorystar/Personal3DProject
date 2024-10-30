@@ -1,7 +1,7 @@
 # Personal3DProject
  
 3D 숙련주차 개인 프로젝트입니다.
-
+과제 제출 트러블슈팅 관련- https://jooglorystar98.tistory.com/32
 
 ## 구현 완료 기능
 
